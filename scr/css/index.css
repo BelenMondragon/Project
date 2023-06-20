@@ -1,0 +1,60 @@
+body{
+    background-image:url("bg.png");
+    
+}
+h1{
+    text-align: center;
+    padding: 15px;
+}
+
+#container{
+    
+    height: 670px;
+    background-color: rgba(172, 216, 170, .3);
+}
+
+
+#contenedor-contador{
+    justify-content: right;
+    background: lightblue;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+#contador{
+    text-align: center;
+    padding: 40%;
+}
+
+#contenedorTareas{
+    height: 450px;
+    border-style: solid;
+    border-color: black;
+    
+}
+.mensajeHide{
+    display: none;
+}
+input{
+    background-color: aquamarine;
+    border-radius: 20px;
+    text-align: center;
+}
+button{
+    background-color: blue;
+}
+li{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    border-style:solid;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: rgb(172, 216, 170);
+    padding: 9px;
+    border-radius: 20px;
+}
+
+.tarea-anniadida li{
+    margin: 5px;
+}
