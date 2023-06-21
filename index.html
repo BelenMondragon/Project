@@ -16,25 +16,33 @@
 
   <body>
     <header>
-      <h1>ToDo Project 2</h1>
+      <h1>TO DO Project 2</h1>
     </header>
 
     <main>
       
         <div id="container" class="container">
         <div class="row">
-          <h1>Lista de Tareas</h1>
+          <h2>Lista de Tareas</h2>
         </div>
         <hr />
         <!-- input y boton -->
         <div class="row">       
           <div class="col-10 py-4">
-            <input id="inputTarea" type="text" placeholder="ejemplo" />
-            <button id="botonAgregar">Añadir</button>
+            <input id="inputTarea" type="text" placeholder="add text" />
+            
+            <button id="botonAgregar">
+              <span id="btnAgregar">Add</span></button>
           </div>
           <div id="contenedor-contador"><p id="contador">0</p></div>
         </div>
 
+        <button id="secTrash">
+          <span class="trash">
+              <span></span>
+              <i></i>
+            </span>
+        </button>
         
         <br />
         <div id="contenedorTareas" class="container-fluid">

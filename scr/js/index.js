@@ -20,6 +20,7 @@ var suma = 0
 
 
 
+
 // console.log("etiqueta", nuevaTarea);
 
 
@@ -32,7 +33,7 @@ function agregar() {
 
     var textoTarea = inputTarea.value;
 
-    if (textoTarea.length == 0) {
+    if (textoTarea.trim() == "") {
         alert("No hay texto")
         return;
 
@@ -48,8 +49,25 @@ function agregar() {
         label.innerHTML = textoTarea;
 
         var btnEliminar = document.createElement("button");
-        btnEliminar.innerText = "Eliminar";
+        btnEliminar.id = "secTrash"
 
+        var spanTrash = document.createElement("span")
+        spanTrash.class = "trash"
+
+        var spanChild = document.createElement("span")
+
+        var iTrash = document.createElement("i")
+        btnEliminar.appendChild(spanTrash)
+        spanTrash.appendChild(spanChild)
+        spanTrash.appendChild(iTrash)
+
+        // btnEliminar.innerText = "Eliminar";
+        //     <button id="secTrash">
+        //     <span class="trash">
+        //         <span></span>
+        //         <i></i>
+        //       </span>
+        //   </button>
 
 
         // ----- se agregan los elements al contenedor ul ----
@@ -65,6 +83,15 @@ function agregar() {
         inputTarea.focus();
     }
 
+    function generateRandomPastelColor() {
+        var max = 280
+        var min = 350
+        var hue = Math.floor(Math.random() * (max - min + 10)) + min;
+        var pastelColor = 'hsl(' + hue + ', 60%, 80%)';
+        return pastelColor;
+    }
+    li.style.backgroundColor = generateRandomPastelColor();
+
 
     btnEliminar.addEventListener("click", function () {
         var itemChecked = btnEliminar.parentElement;
@@ -76,54 +103,55 @@ function agregar() {
 
     check.addEventListener("click", function (event) {
         var itemChecked = event.target.checked;
-        console.log("texto",event.target.checked)
-        if(itemChecked == true){suma++
+        console.log("texto", event.target.checked)
+        if (itemChecked == true) {
+            suma++
             console.log(suma)
 
             contador.innerHTML = suma
         }
-        else{suma--
+        else {
+            suma--
             console.log(suma)
 
             contador.innerHTML = suma
-            
+
         }
-        
+
 
 
         // alert("estoy marcada")
         // if (confirm("¿Desea eliminar la tarea?")) {
         //     ul.removeChild(itemChecked)
         // }
-        
-        
+
+
     })
 
-    
 
 
 
-    function countTareas(){
-        var ulList= document.querySelectorAll("li")
-        console.log ("tareas=", ulList.length);
+    function countTareas() {
+        var ulList = document.querySelectorAll("li")
+        console.log("tareas=", ulList.length);
         var mensaje = document.getElementById("mensaje");
 
-        if(ulList.length > 0){
+        if (ulList.length > 0) {
             mensaje.classList.add("mensajeHide");
         }
-        else{
+        else {
             mensaje.classList.remove("mensajeHide");
         }
 
     }
     countTareas();
 
-    
+
 };
 
-function verificarTecla(event){
+function verificarTecla(event) {
     var tecla = event.keyCode
-    if (tecla == 13){agregar()};
+    if (tecla == 13) { agregar() };
 }
 
 botonAgregar.addEventListener("click", agregar);
