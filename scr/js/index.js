@@ -100,7 +100,7 @@ function agregar() {
 
 
         inputTarea.value = "";
-        inputTarea.focus();
+        inputTarea.focus();S
     }
 
     function generateRandomPastelColor() {
@@ -181,8 +181,6 @@ function verificarTecla(event) {
 }
 function deleteAll() {
     ul.innerHTML = ""
-
-
     mensaje.classList.remove("mensajeHide");
 
 
