@@ -129,8 +129,6 @@ function agregar() {
     })
 
 
-
-
     function countTareas() {
         var ulList = document.querySelectorAll("li")
         console.log("tareas=", ulList.length);
