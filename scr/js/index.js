@@ -23,6 +23,18 @@ var suma = 0
 
 // console.log("etiqueta", nuevaTarea);
 
+function elementoRepetido(text) {
+    const tasks = document.querySelectorAll("li label")
+    for (let i = 0; i < tasks.length; i++) {
+        //         
+        if (tasks[i].textContent.toLowerCase() === text.toLowerCase()) {
+            alert("tarea repetida");
+            return true;
+        }
+
+    }
+    return false;
+}
 
 
 function agregar() {
@@ -37,7 +49,15 @@ function agregar() {
         alert("No hay texto")
         return;
 
-    } else {
+    }
+
+    else if (elementoRepetido(textoTarea) == true) {
+        alert("tarea repetida")
+        return;
+
+    }
+
+    else {
 
         // ---- se crea los elementos que se an a utilizar -----
         var li = document.createElement("li");
@@ -52,15 +72,15 @@ function agregar() {
         btnEliminar.id = "secTrash"
 
         var spanTrash = document.createElement("span")
-        spanTrash.class = "trash"
+        spanTrash.classList.add("trash")
 
         var spanChild = document.createElement("span")
 
         var iTrash = document.createElement("i")
-        btnEliminar.appendChild(spanTrash)
         spanTrash.appendChild(spanChild)
         spanTrash.appendChild(iTrash)
 
+        btnEliminar.appendChild(spanTrash)
         // btnEliminar.innerText = "Eliminar";
         //     <button id="secTrash">
         //     <span class="trash">
@@ -129,6 +149,8 @@ function agregar() {
     })
 
 
+
+
     function countTareas() {
         var ulList = document.querySelectorAll("li")
         console.log("tareas=", ulList.length);
@@ -145,14 +167,29 @@ function agregar() {
     countTareas();
 
 
+
+
+
 };
+
+
+
 
 function verificarTecla(event) {
     var tecla = event.keyCode
     if (tecla == 13) { agregar() };
 }
+function deleteAll() {
+    ul.innerHTML = ""
 
-botonAgregar.addEventListener("click", agregar);
+
+    mensaje.classList.remove("mensajeHide");
+
+
+}
+
+botonAgregar.addEventListener("click", agregar, elementoRepetido);
 inputTarea.addEventListener("keyup", verificarTecla);
-
+var deleteAllbtn = document.getElementById("deleteAllBtn")
+deleteAllbtn.addEventListener("click", deleteAll)
 
