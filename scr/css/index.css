@@ -13,12 +13,19 @@
   src: url("letra/Pinky\ Style.ttf");
 }
 
-
+@font-face {
+  font-family: flowers;
+  src: url("letra/Flowers\ St.ttf");
+}
 
 
 body {
   background-image: url("bg.png");
 
+}
+
+#decor-titulo {
+  font-family: "flower";
 }
 
 h1 {
@@ -35,11 +42,10 @@ h2 {
   font-size: 300%;
 }
 
-hr{
+hr {
   width: 90%;
   margin-left: 5%;
   color: black;
-  border
 }
 
 p {
@@ -50,19 +56,22 @@ p {
 }
 
 #container {
-
+  min-width: 90%;
   min-height: 530px;
   background-color: rgba(252, 140, 213, 0.521);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+
 
 }
 
-/* -webkit-box-shadow: 10px 10px 24px -11px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 24px -11px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 24px -11px rgba(0,0,0,0.75); */
 
-#div-takscount{
-border-style: solid;
-border-color: #ff0011;
+
+#div-takscount {
+  border-style: solid;
+  border-color: #ff0011;
 
 }
 
@@ -76,31 +85,25 @@ border-color: #ff0011;
   margin-left: 15%;
   display: flex;
   flex-direction: column;
-  
+
 }
 
 #contador {
   font-size: 300%;
   text-align: center;
   padding: 25%;
-  /* display: flex;
-    justify-content: ; */
+
 }
 
 #contenedorTareas {
-  
-  min-height: 280px
-  ;
+
+  min-height: 280px;
   border-style: solid;
   border-color: black;
   box-shadow: inset 21px 21px 21px #bf6e9f,
     inset -21px -21px 21px #ffa8f3;
 
 }
-
-/* -webkit-box-shadow: 0px 0px 20px 6px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 20px 6px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 20px 6px rgba(0,0,0,0.75); */
 
 .mensajeHide {
   display: none;
@@ -128,7 +131,7 @@ label {
   font-family: pinkyspring;
   font-size: 30px;
   overflow: auto;
-  -webkit-scrollbar-thumb
+  -webkit-scrollbar-thumb;
 }
 
 
@@ -139,7 +142,7 @@ label {
   text-align: center;
   background: rgb(247, 150, 192);
   background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(242, 0, 186, .4) 100%);
-  line-height: 42px;  
+  line-height: 42px;
   height: 5%;
   width: 15%;
   border: none;
@@ -194,6 +197,7 @@ label {
   height: 100%;
 }
 
+
 #botonAgregar span:before,
 #botonAgregar span:after {
   position: absolute;
@@ -240,7 +244,7 @@ label {
 
 .trash {
 
-  background: #ff6873;
+  background: #ff6893;
   width: 16px;
   height: 20px;
   display: inline-block;
@@ -353,7 +357,7 @@ h5 {
   text-align: center;
   font-size: 25px;
   margin-left: 17%;
-  
+
 }
 
 
@@ -363,23 +367,23 @@ h5 {
   border-style: none;
   width: 50px;
   height: 50px;
-  color: #ff0011;
+  color: #ff0073;
   margin-left: 3%;
   margin-top: -10%;
- 
+
   border-style: none;
   /* From https://css.glass */
-background: rgba(255, 255, 255, 0.19);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(8.2px);
--webkit-backdrop-filter: blur(8.2px);
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(8.2px);
 
 }
 
 .trashend {
 
-  background: #ff0011;
+  background: #ff0073;
   width: 19px;
   height: 23px;
   display: inline-block;
@@ -406,7 +410,7 @@ backdrop-filter: blur(8.2px);
 .trashend span {
   position: absolute;
   height: 5px;
-  background: #ff0011;
+  background: #ff0073;
   top: -6px;
   left: -3px;
   right: -3px;
@@ -424,7 +428,7 @@ backdrop-filter: blur(8.2px);
   margin-left: -19px;
   width: 9px;
   height: 4px;
-  background: #ff0011;
+  background: #ff0073;
   top: -5px;
 
   border-top-left-radius: 5px;
