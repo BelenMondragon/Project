@@ -14,35 +14,41 @@
     />
     <link rel="stylesheet" href="scr/css/index.css" />
     
+    
   </head>
 
 
   <body>
-    
+    <div id="bg">
+      <div class="snow"></div>
+
     <header>
-      <h1>Belen´s To Do Project</h1>
+      <h1 class="row-sm">Belen´s To Do Project</h1>
     </header>
 
     <main>
       
       
         <div id="container" class="container">
-        <div class="row">
-          <h2>Lista de Tareas</h2>
+        <div class="row-sm">
+          <h2>Tasks list
+          </h2>
         </div>
         <hr />
         <!-- input y boton -->
-        <div class="row">       
-          <div class="col-10 py-4">
+        <div id="div-takscoun" class="row-sm py-2">       
+          <div id="div-inputTarea" class="row">
             <input id="inputTarea" type="text" placeholder="add text" />
             
             <button id="botonAgregar">
               <span id="btnAgregar">Add</span></button>
+            
+              <div  id="contenedor-contador" class=""><p id="contador">0</p>
+                <h5>Done</h5>
+              </div>
           </div>
           
-          <div  id="contenedor-contador"><p id="contador">0</p>
-            <h5>Done</h5>
-          </div>
+         
           
         </div>
 
@@ -56,7 +62,7 @@
         <br />
         <div id="contenedorTareas" class="container-fluid">
           <br />
-          <p id="mensaje" class="text-center ">no hay tareas pendientes</p>
+          <p id="mensaje" class="text-center ">no tasks to do</p>
           <ul id="ulTareas" class="tarea-anniadida">
             <!-- <label for="">tarea</label>
             <input type="checkbox" name="" id="" /> -->
@@ -65,17 +71,20 @@
       </div>
     </main>
 
-    <footer>
+    <footer class="row-sm">
       <button id="deleteAllBtn">
         <span class="trashend">
             <span></span>
             <i></i>
           </span>
-      </button>S
+      </button>
       <!-- <button id="deleteAllBtn">Delete all</button> -->
     </footer>
-  </body>
 
+    </div>
+      </body>
+      <script defer src="http://app.embed.im/snow.js"></script>
   <script src="scr/js/index.js"></script>
-  <script defer src="http://app.embed.im/snow.js"></script>
+
+  
 </html>

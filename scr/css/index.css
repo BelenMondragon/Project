@@ -15,6 +15,7 @@
 
 
 
+
 body {
   background-image: url("bg.png");
 
@@ -22,22 +23,29 @@ body {
 
 h1 {
   text-align: center;
-  padding: 15px;
+  padding: 5%;
   font-family: "pinkySpring";
-  font-size: 20px;
+  font-size: 200%;
 }
 
 h2 {
   text-align: center;
-  padding: 15px;
+  padding: 4%;
   font-family: "pinkystyle";
-  font-size: 40px;
+  font-size: 300%;
+}
+
+hr{
+  width: 90%;
+  margin-left: 5%;
+  color: black;
+  border
 }
 
 p {
   font-family: "pinkySpring";
-  font-size: 35px;
-  margin-left: -7px;
+  font-size: 200%;
+  margin-left: -7%;
   margin-top: -5px;
 }
 
@@ -52,6 +60,11 @@ p {
 -moz-box-shadow: 10px 10px 24px -11px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 24px -11px rgba(0,0,0,0.75); */
 
+#div-takscount{
+border-style: solid;
+border-color: #ff0011;
+
+}
 
 #contenedor-contador {
   box-shadow: inset 23px 23px 14px #cf4fa6,
@@ -60,20 +73,24 @@ box-shadow: 10px 10px 24px -11px rgba(0,0,0,0.75); */
   border-radius: 50%;
   width: 70px;
   height: 70px;
+  margin-left: 15%;
   display: flex;
-
+  flex-direction: column;
+  
 }
 
 #contador {
+  font-size: 300%;
   text-align: center;
-  padding: 40%;
+  padding: 25%;
   /* display: flex;
     justify-content: ; */
 }
 
 #contenedorTareas {
-
-  min-height: 280px;
+  
+  min-height: 280px
+  ;
   border-style: solid;
   border-color: black;
   box-shadow: inset 21px 21px 21px #bf6e9f,
@@ -96,12 +113,14 @@ box-shadow: 0px 0px 20px 6px rgba(0,0,0,0.75); */
   border-radius: 20px;
   text-align: center;
   line-height: 42px;
-  width: 250px;
-  padding: 0px;
+  width: 40%;
+  height: 45px;
+  padding: 0%;
   border: none;
   border-radius: 10px;
   box-shadow: inset 23px 23px 14px #cf4fa6,
     inset -23px -9px 14px #ff6be0;
+  margin-left: 2cqh;
 }
 
 
@@ -112,14 +131,17 @@ label {
   -webkit-scrollbar-thumb
 }
 
+
 #botonAgregar {
+  margin-left: 1%;
   font-family: pinkyspring;
   font-size: 25px;
   text-align: center;
   background: rgb(247, 150, 192);
   background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(242, 0, 186, .4) 100%);
-  line-height: 42px;
-  padding: 0;
+  line-height: 42px;  
+  height: 5%;
+  width: 15%;
   border: none;
   border-radius: 10px;
 }
@@ -127,8 +149,8 @@ label {
 #botonAgregar span {
   position: relative;
   display: block;
-  width: 100px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
 }
 
 #botonAgregar:before,
@@ -327,24 +349,31 @@ li {
 
 h5 {
   font-family: "pinkySpring";
-  margin-top: 25px;
-  margin-left: 10px;
+  margin-top: -35px;
+  text-align: center;
   font-size: 25px;
+  margin-left: 17%;
+  
 }
 
-#deleteAllBtn {
- 
-}
+
 
 #deleteAllBtn {
   border-radius: 50%;
   border-style: none;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   color: #ff0011;
-  margin-left: 49px;
-  background: none;
+  margin-left: 3%;
+  margin-top: -10%;
+ 
   border-style: none;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.19);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.2px);
+-webkit-backdrop-filter: blur(8.2px);
 
 }
 

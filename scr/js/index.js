@@ -28,7 +28,7 @@ function elementoRepetido(text) {
     for (let i = 0; i < tasks.length; i++) {
         //         
         if (tasks[i].textContent.toLowerCase() === text.toLowerCase()) {
-            alert("tarea repetida");
+            alert("you already have this task");
             return true;
         }
 
@@ -46,13 +46,13 @@ function agregar() {
     var textoTarea = inputTarea.value;
 
     if (textoTarea.trim() == "") {
-        alert("No hay texto")
+        alert("You have not added text")
         return;
 
     }
 
     else if (elementoRepetido(textoTarea) == true) {
-        alert("tarea repetida")
+        alert("you already add this taks")
         return;
 
     }
@@ -100,7 +100,7 @@ function agregar() {
 
 
         inputTarea.value = "";
-        inputTarea.focus();S
+        inputTarea.focus();
     }
 
     function generateRandomPastelColor() {
@@ -115,7 +115,7 @@ function agregar() {
 
     btnEliminar.addEventListener("click", function () {
         var itemChecked = btnEliminar.parentElement;
-        if (confirm("¿Desea eliminar la tarea?")) {
+        if (confirm("Do you want to delete this task?")) {
             ul.removeChild(itemChecked)
             countTareas();
         }
@@ -190,4 +190,6 @@ botonAgregar.addEventListener("click", agregar, elementoRepetido);
 inputTarea.addEventListener("keyup", verificarTecla);
 var deleteAllbtn = document.getElementById("deleteAllBtn")
 deleteAllbtn.addEventListener("click", deleteAll)
+
+
 
