@@ -1,3 +1,5 @@
+
+
 var inputTarea = document.getElementById("inputTarea");
 
 var botonAgregar = document.getElementById("botonAgregar");
@@ -14,21 +16,13 @@ var suma = 0
 
 
 
-
-
-
-
-
-
-
 // console.log("etiqueta", nuevaTarea);
 
 function elementoRepetido(text) {
     const tasks = document.querySelectorAll("li label")
     for (let i = 0; i < tasks.length; i++) {
         //         
-        if (tasks[i].textContent.toLowerCase() === text.toLowerCase()) {
-            alert("you already have this task");
+        if (tasks[i].textContent.toLowerCase().trim() === text.toLowerCase().trim()) {
             return true;
         }
 
@@ -81,13 +75,6 @@ function agregar() {
         spanTrash.appendChild(iTrash)
 
         btnEliminar.appendChild(spanTrash)
-        // btnEliminar.innerText = "Eliminar";
-        //     <button id="secTrash">
-        //     <span class="trash">
-        //         <span></span>
-        //         <i></i>
-        //       </span>
-        //   </button>
 
 
         // ----- se agregan los elements al contenedor ul ----
@@ -97,6 +84,8 @@ function agregar() {
         li.appendChild(check);
         li.appendChild(label);
         li.appendChild(btnEliminar);
+
+        check.addEventListener("change", contarChecks);
 
 
         inputTarea.value = "";
@@ -116,37 +105,36 @@ function agregar() {
     btnEliminar.addEventListener("click", function () {
         var itemChecked = btnEliminar.parentElement;
         if (confirm("Do you want to delete this task?")) {
+            var checkbox = itemChecked.querySelector("input")
+            console.log(checkbox)
+            if (checkbox.checked == true) {
+                suma = suma - 1;
+                contador.textContent = suma;
+            }
             ul.removeChild(itemChecked)
             countTareas();
         }
     })
 
-    check.addEventListener("click", function (event) {
+
+
+    function contarChecks(event) {
         var itemChecked = event.target.checked;
         console.log("texto", event.target.checked)
         if (itemChecked == true) {
             suma++
             console.log(suma)
-
             contador.innerHTML = suma
         }
         else {
             suma--
             console.log(suma)
-
             contador.innerHTML = suma
 
         }
 
 
-
-        // alert("estoy marcada")
-        // if (confirm("¿Desea eliminar la tarea?")) {
-        //     ul.removeChild(itemChecked)
-        // }
-
-
-    })
+    }
 
 
 
@@ -166,10 +154,6 @@ function agregar() {
     }
     countTareas();
 
-
-
-
-
 };
 
 
@@ -182,9 +166,15 @@ function verificarTecla(event) {
 function deleteAll() {
     ul.innerHTML = ""
     mensaje.classList.remove("mensajeHide");
-
-
+    suma = 0;
+    contador.textContent = suma;
+    countTareas();
 }
+
+
+
+
+
 
 botonAgregar.addEventListener("click", agregar, elementoRepetido);
 inputTarea.addEventListener("keyup", verificarTecla);
